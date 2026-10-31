@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://158pwj8fkt62"]
+
+[ext_resource type="Script" uid="uid://cvdxdwhqtlyna" path="res://scripts/kitchen.gd" id="1_mrp8g"]
+[ext_resource type="Texture2D" uid="uid://cacxfnq52421i" path="res://assets/art/grandma_neutral.png" id="2_2b6py"]
+[ext_resource type="Texture2D" uid="uid://dyfj500pysmuv" path="res://assets/art/bowl_empty.png" id="3_bems3"]
+[ext_resource type="Texture2D" uid="uid://c2osd65kdrdgj" path="res://assets/art/flour.png" id="4_v3ycp"]
+[ext_resource type="Texture2D" uid="uid://s45m1txu511" path="res://assets/art/sugar.png" id="5_ibrlr"]
+[ext_resource type="Texture2D" uid="uid://dks6wbj1sh5x5" path="res://assets/art/egg.png" id="6_mwmjw"]
+[ext_resource type="Texture2D" uid="uid://0jjr2sjv8cr1" path="res://assets/art/salt.png" id="7_cwf2y"]
+[ext_resource type="Texture2D" uid="uid://3jnm2ryyig3l" path="res://assets/art/oven_off.png" id="8_mwmjw"]
+[ext_resource type="Texture2D" uid="uid://cl1lkbekteooc" path="res://assets/art/mix.png" id="9_mwmjw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mwmjw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwmjw"]
+
+[node name="Kitchen" type="Node2D" unique_id=1165988718]
+script = ExtResource("1_mrp8g")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1298070768]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=733652241]
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="MainLayout" type="VBoxContainer" parent="MarginContainer" unique_id=117615079]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Header" type="HBoxContainer" parent="MarginContainer/MainLayout" unique_id=19994990]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="MarginContainer/MainLayout/Header" unique_id=1858756843]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Just A Pinch"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StageLabel" type="Label" parent="MarginContainer/MainLayout/Header" unique_id=1560979067]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Stage: Ingredients"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Body" type="HBoxContainer" parent="MarginContainer/MainLayout" unique_id=2001230671]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GrandmaPanel" type="PanelContainer" parent="MarginContainer/MainLayout/Body" unique_id=1096645932]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mwmjw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MainLayout/Body/GrandmaPanel" unique_id=300702671]
+layout_mode = 2
+
+[node name="GrandmaPortrait" type="TextureRect" parent="MarginContainer/MainLayout/Body/GrandmaPanel/VBoxContainer" unique_id=1596257420]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+texture = ExtResource("2_2b6py")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="DialogueLabel" type="RichTextLabel" parent="MarginContainer/MainLayout/Body/GrandmaPanel/VBoxContainer" unique_id=1829358575]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mwmjw")
+text = "Cncjhhghhkjahsdh"
+
+[node name="CookingArea" type="Control" parent="MarginContainer/MainLayout/Body" unique_id=1797056137]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CakeVisual" type="TextureRect" parent="MarginContainer/MainLayout/Body/CookingArea" unique_id=1609387654]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bems3")
+
+[node name="ItemPanel" type="GridContainer" parent="MarginContainer/MainLayout/Body" unique_id=179083591]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+columns = 2
+
+[node name="FlourButton" type="TextureButton" parent="MarginContainer/MainLayout/Body/ItemPanel" unique_id=39436077]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture_normal = ExtResource("4_v3ycp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SugarButton" type="TextureButton" parent="MarginContainer/MainLayout/Body/ItemPanel" unique_id=1500568999]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("5_ibrlr")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="EggButton" type="TextureButton" parent="MarginContainer/MainLayout/Body/ItemPanel" unique_id=638626200]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("6_mwmjw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SaltButton" type="TextureButton" parent="MarginContainer/MainLayout/Body/ItemPanel" unique_id=518347369]
+custom_maximum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("7_cwf2y")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="OvenButton" type="TextureButton" parent="MarginContainer/MainLayout/Body/ItemPanel" unique_id=1785467698]
+custom_minimum_size = Vector2(0, 150)
+custom_maximum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("8_mwmjw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MixButton" type="TextureButton" parent="MarginContainer/MainLayout/Body/ItemPanel" unique_id=1641974282]
+custom_minimum_size = Vector2(0, 150)
+custom_maximum_size = Vector2(150, 150)
+layout_mode = 2
+texture_normal = ExtResource("9_mwmjw")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Footer" type="HBoxContainer" parent="MarginContainer/MainLayout" unique_id=1692339133]
+layout_mode = 2
+
+[node name="ActionPanel" type="HBoxContainer" parent="MarginContainer/MainLayout/Footer" unique_id=152660412]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BakingProgressBar" type="ProgressBar" parent="MarginContainer/MainLayout/Footer/ActionPanel" unique_id=758349120]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 15.0
+
+[node name="ContinueButton" type="Button" parent="MarginContainer/MainLayout/Footer" unique_id=849395152]
+layout_mode = 2
+text = "Continue"
